@@ -3,7 +3,7 @@
     "description": "api",
     "autoload": {
         "psr-4": {
-            "Task\\": "api/"
+            "Task\\Api\\": "Task/api/"
         }
     },
     "require": {
