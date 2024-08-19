@@ -1,0 +1,12 @@
+{
+    "name": "akram/api",
+    "description": "api",
+    "autoload": {
+        "psr-4": {
+            "Task\\": "api/"
+        }
+    },
+    "require": {
+        "aura/autoload": "^2.0"
+    }
+}
