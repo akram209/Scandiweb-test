@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Aura\\Autoload\\' => array($vendorDir . '/aura/autoload/src'),
-    'Akram\\Api\\' => array($baseDir . '/src'),
+    'Api\\' => array($baseDir . '/api'),
 );

@@ -10,7 +10,7 @@ class ComposerStaticInit6ad1dd1ed2238493bb1513ff010b1211
         'A' => 
         array (
             'Aura\\Autoload\\' => 14,
-            'Akram\\Api\\' => 10,
+            'Api\\' => 4,
         ),
     );
 
@@ -19,9 +19,9 @@ class ComposerStaticInit6ad1dd1ed2238493bb1513ff010b1211
         array (
             0 => __DIR__ . '/..' . '/aura/autoload/src',
         ),
-        'Akram\\Api\\' => 
+        'Api\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/api',
         ),
     );
 

@@ -3,8 +3,8 @@
     "description": "api",
     "autoload": {
         "psr-4": {
-            "Task\\Api\\": "Task/api/"
-        }
+            "Api\\": "api/"
+                }
     },
     "require": {
         "aura/autoload": "^2.0"

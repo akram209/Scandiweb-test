@@ -1,13 +1,18 @@
 <?php
 
-namespace Api\Controller;
+namespace  Api\Controller;
 
 use Api\Model\Product;
 use Api\Core\Request;
 
 class ProductController
 {
-    public function index(Request $request)
+    private $request;
+    public function __construct($request)
+    {
+        $this->request = $request;
+    }
+    public function index()
     {
         $product = new Product();
         echo json_encode($product->getAll());

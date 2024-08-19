@@ -1,11 +1,11 @@
 <?php
-
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/api/Route/main.php';
 
 use Api\Core\Request;
-use Api\Core\Route;
+use Api\Core\Router;
 
-$router = require_once __DIR__ . '/api/routes.php';
+
 $request = new Request();
 
 $router->dispatch($request);
