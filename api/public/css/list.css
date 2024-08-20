@@ -1,0 +1,35 @@
+#product-head{
+    padding: 25px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+}
+
+h2{
+    display: inline;
+}
+.btn.btn-primary{
+    margin-left: 75%;
+}
+.container.text-center{
+    position: relative;
+    top: 150px;
+}
+.col{
+    padding: 10px;
+    height: 200px;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px grey;
+    transition: .5s;
+}
+
+.col:hover{
+    box-shadow: 5px 5px 5px rgb(255, 253, 253);
+    padding: 15px;
+}
