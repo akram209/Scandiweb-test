@@ -33,3 +33,15 @@ h2{
     box-shadow: 5px 5px 5px rgb(255, 253, 253);
     padding: 15px;
 }
+li{
+    list-style: none;
+   border: 1px solid white;
+
+}
+input[type="checkbox"]{
+    position: relative;
+    float: left;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+}

@@ -3,13 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             localStorage.setItem('products', JSON.stringify(data));
+
         })
         .catch(error => console.error('Error fetching products:', error));
 });
 
 if (localStorage.getItem('products')) {
-    let products = JSON.parse(localStorage.getItem('products'));
-    let app = document.getElementById('app');
-    app.innerHTML = '<ul>' + products.map(product => `<li>${product.name} - $${product.price}</li>`).join('') + '</ul>';
-}
+    for (let i = 0; i < localStorage.getItem('products').length; i++) {
+        let products = JSON.parse(localStorage.getItem('products'));
+        let list = document.getElementsByClassName('row row-cols-4')[0];
+        let newDiv = document.createElement('div');
+        newDiv.className = 'col';
+        newDiv.innerHTML = `<input type="checkbox" value="${products[i].id}">
+                            <li>${products[i].name}</li> 
+                            <li>${products[i].price}</li>
+                            <li>${products[i].sku}</li>
+                            <li>${products[i].product_type}</li>`;
+        list.appendChild(newDiv);
+    }
+    }
+  
+
 

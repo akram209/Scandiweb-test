@@ -12,8 +12,8 @@
 <body>
     <div id="product-head">
         <h2>Product List</h2>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-danger">mass delete</button>
         <hr>
 
 
@@ -21,13 +21,7 @@
 
     <div class="container text-center">
         <div class="row row-cols-4">
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
-            <div class="col">Column</div>
+
 
         </div>
     </div>
