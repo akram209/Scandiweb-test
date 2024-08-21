@@ -16,9 +16,10 @@ if (localStorage.getItem('products')) {
         newDiv.className = 'col';
         newDiv.innerHTML = `<input type="checkbox" value="${products[i].id}">
                             <li>${products[i].name}</li> 
-                            <li>${products[i].price}</li>
+                            <li>${products[i].price}$</li>
                             <li>${products[i].sku}</li>
-                            <li>${products[i].product_type}</li>`;
+                            <li>${products[i].product_type}</li>
+                            <li>${products[i].property}</li>`;
         list.appendChild(newDiv);
     }
     }

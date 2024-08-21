@@ -5,10 +5,10 @@ namespace Api\Model;
 use Api\Core\Database;
 use PDO;
 
-class DVD
+class Book
 {
     private $conn;
-    private $table = 'dvds';
+    private $table = 'books';
 
     public function __construct()
     {
