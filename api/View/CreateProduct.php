@@ -10,7 +10,12 @@
 </head>
 
 <body>
-    <form action="" method="POST" id="product_form">
+    <div id="btns">
+        <button id="save" class="btn btn-primary">save</button>
+        <button id="cancel" class="btn btn-danger">cancel</button>
+    </div>
+
+    <form action="/products" method="POST" id="product_form">
         <div>
             <label for="sku">SKU :</label>
             <input type="text" name="sku" id="sku">
@@ -27,8 +32,8 @@
         </div>
         <div>
             <label for="product_type">Product type :</label>
-            <select name="product_type" id="product_type" required>
-                <option value="DVD"> DVD</option>
+            <select name="product_type" id="product_type">
+                <option value="DVD-disc"> DVD</option>
                 <option value="Book"> Book</option>
                 <option value="Furniture">Furniture</option>
 
@@ -43,6 +48,7 @@
 
 
     </form>
+
     <script src="../public/js/form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

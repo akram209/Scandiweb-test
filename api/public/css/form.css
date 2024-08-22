@@ -44,4 +44,8 @@ select{
 label[for="product_type"]{
     margin-right: 20px;
 }
-
+#btns{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 45%;
+}

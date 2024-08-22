@@ -7,27 +7,29 @@ use PDOException;
 
 class Database
 {
-    private $sql;
+    private static $sql;
 
-    public function __construct()
+    // Private constructor to prevent multiple instances
+    private function __construct() {}
+
+    public static function getConnection()
     {
-        try {
-            $dsn = "mysql:host=localhost;port=3306;dbname=products";
-            $username = "root";
-            $password = 'akram209';
-            $this->sql = new PDO($dsn, $username, $password);
-            $this->sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            // Handle the PDO-specific exception
-            echo "Connection failed: " . $e->getMessage();
-        } catch (PDOException $e) {
-            // Handle other exceptions
-            echo "Connection failed: " . $e->getMessage();
+        if (self::$sql === null) {
+            try {
+                $dsn = "mysql:host=localhost;port=3306;dbname=products";
+                $username = "root";
+                $password = 'akram209';
+
+                // Create a new PDO instance
+                self::$sql = new PDO($dsn, $username, $password);
+                self::$sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                // Handle PDO-specific exceptions
+                echo "Connection failed: " . $e->getMessage();
+                exit; // Stop further execution if the connection fails
+            }
         }
-    }
 
-    public function getConnection()
-    {
-        return $this->sql;
+        return self::$sql;
     }
 }

@@ -12,7 +12,7 @@
 <body>
     <div id="product-head">
         <h2>Product List</h2>
-        <button type="button" class="btn btn-primary">Add</button>
+        <a href="CreateProduct.php" type="button" class="btn btn-primary">Add</a>
         <button type="button" class="btn btn-danger">mass delete</button>
         <hr>
 

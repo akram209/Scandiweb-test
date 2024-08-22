@@ -4,10 +4,10 @@ document.getElementById('product_type').addEventListener('change', function() {
     dynamicFields.innerHTML = ''; 
 
     switch (selectedValue) {
-        case 'DVD':
+        case 'DVD-disc':
             dynamicFields.innerHTML = `
                 <label for="size">Size:</label>
-                <input type="text" id="size" name="size">
+                <input type="text" id="size" name="size_mb">
                 <p>Please, provide the size of the DVD.</p>
             `;
             break;
@@ -41,3 +41,19 @@ document.getElementById('product_type').addEventListener('change', function() {
             break;
     }
 });
+cancel=document.getElementById('cancel');
+save = document.getElementById('save');
+
+cancel.addEventListener('click',function(){
+    document.querySelectorAll('input').forEach(input => input.value = '');
+    
+});
+save.addEventListener('click',function(){
+    document.getElementById('product_form').submit();
+    
+});
+
+// validation
+
+
+

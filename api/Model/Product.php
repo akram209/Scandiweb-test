@@ -8,12 +8,19 @@ use PDO;
 class Product
 {
     private $conn;
+    private Book $book;
+    private Dvd $dvd;
+    private Furniture $furniture;
 
     private $table = 'products';
 
+
     public function __construct()
     {
-        $this->conn = (new Database())->getConnection();
+        $this->conn = Database::getConnection();
+        $this->book = new Book();
+        $this->dvd = new Dvd();
+        $this->furniture = new Furniture();
     }
 
     public function getAll()
@@ -45,6 +52,31 @@ LEFT JOIN
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function store()
+    {
+        $sku = $_POST['sku'];
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $product_type = $_POST['product_type'];
+        $insert = "INSERT INTO products (sku, name, price, product_type) VALUES (:sku, :name, :price, :product_type)";
+        var_dump($this->conn);
+        $stmt = $this->conn->prepare($insert);
+        $stmt->execute(['sku' => $sku, 'name' => $name, 'price' => $price, 'product_type' => $product_type]);
+        switch ($product_type) {
+            case 'DVD-disc':
+                $this->dvd->setBySku($sku);
+                header('Location: ../api/View/ProductList.php');
+                break;
+            case 'Book':
+                $this->book->setBySku($sku);
+                header('Location: ../api/View/ProductList.php');
+                break;
+            case 'Furniture':
+                $this->furniture->setBySku($sku);
+                header('Location: ../api/View/ProductList.php');
+                break;
+        }
     }
 
     // Other CRUD methods (create, update, delete) can be added here

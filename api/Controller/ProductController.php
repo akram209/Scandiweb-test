@@ -17,6 +17,12 @@ class ProductController
         $product = new Product();
         echo json_encode($product->getAll());
     }
+    public function store()
+    {
+
+        $product = new Product();
+        $product->store();
+    }
 
     // Other actions like create, update, delete can be added here
 }
