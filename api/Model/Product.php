@@ -79,5 +79,17 @@ LEFT JOIN
         }
     }
 
+    public function delete()
+    {
+        $ids = $_POST['product'];
+
+        foreach ($ids as $id) {
+            $delete = "DELETE FROM products WHERE id = :id";
+            $stmt = $this->conn->prepare($delete);
+            $stmt->execute(['id' => $id]);
+        }
+        header('Location: ../api/View/ProductList.php');
+    }
+
     // Other CRUD methods (create, update, delete) can be added here
 }

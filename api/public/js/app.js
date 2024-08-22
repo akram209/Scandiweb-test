@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let newDiv = document.createElement('div');
             newDiv.className = 'col';
             newDiv.innerHTML = `
-                <input type="checkbox" value="${product.id}">
+                <input type="checkbox" name="product[]" value="${product.id}">
                 <li>${product.name}</li> 
                 <li>${product.price}$</li>
                 <li>${product.sku}</li>
@@ -33,4 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
             list.appendChild(newDiv);
         });
     }
+});
+
+
+var deleteBtn = document.getElementById('mass-delete');
+deleteBtn.addEventListener('click', function() {
+    document.getElementById('delete').submit();
+
 });

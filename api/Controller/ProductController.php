@@ -24,5 +24,12 @@ class ProductController
         $product->store();
     }
 
+    public function delete()
+    {
+        $product = new Product();
+        $product->delete();
+    }
+
+
     // Other actions like create, update, delete can be added here
 }

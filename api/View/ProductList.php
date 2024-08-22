@@ -13,18 +13,20 @@
     <div id="product-head">
         <h2>Product List</h2>
         <a href="CreateProduct.php" type="button" class="btn btn-primary">Add</a>
-        <button type="button" class="btn btn-danger">mass delete</button>
+        <button id="mass-delete" class="btn btn-danger">mass delete</button>
         <hr>
 
 
     </div>
+    <form id="delete" action="/products-delete" method="POST">
 
-    <div class="container text-center">
-        <div class="row row-cols-4">
+        <div class="container text-center">
+            <div class="row row-cols-4">
 
 
+            </div>
         </div>
-    </div>
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../public/js/app.js"> </script>
 </body>
