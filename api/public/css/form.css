@@ -46,6 +46,15 @@ label[for="product_type"]{
 }
 #btns{
     position: absolute;
-    margin-top: 100px;
+    margin-top: 170px;
     margin-left: 45%;
 }
+p{
+    text-align: left;
+    color: red;
+    font-weight: bold;
+    font-size: 10px;
+    margin-left: 40%;
+
+}
+

@@ -20,7 +20,7 @@ class ProductController
     public function store()
     {
 
-        $product = new Product();
+        $product = new Product($_POST['sku'], $_POST['name'], $_POST['price'], $_POST['product_type']);
         $product->store();
     }
 

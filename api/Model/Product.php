@@ -12,16 +12,73 @@ class Product
     private Dvd $dvd;
     private Furniture $furniture;
 
-    private $table = 'products';
+    // Product attributes
+    private $sku;
+    private $name;
+    private $price;
+    private $product_type;
 
 
-    public function __construct()
+    public function __construct($sku = null, $name = null, $price = null, $product_type = null)
     {
         $this->conn = Database::getConnection();
         $this->book = new Book();
         $this->dvd = new Dvd();
         $this->furniture = new Furniture();
+        if ($sku) {
+            $this->sku = $sku;
+            $this->name = $name;
+            $this->price = $price;
+            $this->product_type = $product_type;
+        }
     }
+
+
+
+    // Getter and Setter for sku
+    public function getSku()
+    {
+        return $this->sku;
+    }
+
+    public function setSku($sku)
+    {
+        $this->sku = $sku;
+    }
+
+    // Getter and Setter for name
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // Getter and Setter for price
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    // Getter and Setter for product_type
+    public function getProductType()
+    {
+        return $this->product_type;
+    }
+
+    public function setProductType($product_type)
+    {
+        $this->product_type = $product_type;
+    }
+
 
     public function getAll()
     {
@@ -55,28 +112,16 @@ LEFT JOIN
     }
     public function store()
     {
-        $sku = $_POST['sku'];
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-        $product_type = $_POST['product_type'];
+        $sku = $this->sku;
+        $name = $this->name;
+        $price = $this->price;
+        $product_type = $this->product_type;
         $insert = "INSERT INTO products (sku, name, price, product_type) VALUES (:sku, :name, :price, :product_type)";
-        var_dump($this->conn);
         $stmt = $this->conn->prepare($insert);
         $stmt->execute(['sku' => $sku, 'name' => $name, 'price' => $price, 'product_type' => $product_type]);
-        switch ($product_type) {
-            case 'DVD-disc':
-                $this->dvd->setBySku($sku);
-                header('Location: ../api/View/ProductList.php');
-                break;
-            case 'Book':
-                $this->book->setBySku($sku);
-                header('Location: ../api/View/ProductList.php');
-                break;
-            case 'Furniture':
-                $this->furniture->setBySku($sku);
-                header('Location: ../api/View/ProductList.php');
-                break;
-        }
+        $map = ['Book' => $this->book, 'DVD-disc' => $this->dvd, 'Furniture' => $this->furniture];
+        $map[$product_type]->setBySku($sku);
+        header('Location: ../api/View/ProductList.php');
     }
 
     public function delete()
